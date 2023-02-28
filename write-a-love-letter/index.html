@@ -14,7 +14,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
-<!-- Meta Pixel Code -->
+<script src="payments.js"></script>
+<link href="customStyling.css" rel="stylesheet" type="text/css">
+
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -112,6 +114,62 @@ src="https://www.facebook.com/tr?id=769096397976323&ev=PageView&noscript=1"
 </style>
 </head>
 <body>
+
+    <section class="relative bg-white" data-tails-scripts="//unpkg.com/alpinejs">
+        <section class="w-full bg-white gray-900">
+        <section class="w-full bg-white gray-900 tails-relative">
+        <div class="mx-auto flex max-w-7xl items-center h-16 py-1 box-content justify-between">
+            <div class="flex items-center space-x-2 p-4">
+                <button onclick="
+     const nav = document.getElementById('nav');
+      const bar1 = document.getElementById('bar1');
+      const bar2 = document.getElementById('bar2');
+      const bar3 = document.getElementById('bar3');
+    
+      if (nav.classList.contains('hidden')) {
+        nav.classList.remove('hidden');
+        bar1.classList.add('rotate-45');
+        bar1.classList.add('translate-y-full');
+        bar1.classList.add('mt-0.5');
+        bar2.classList.add('opacity-0');
+        bar3.classList.add('-rotate-45');
+        bar3.classList.add('absolute');
+        bar3.classList.add('-translate-y-0.5');
+      } else {
+        nav.classList.add('hidden');
+        bar1.classList.remove('rotate-45');
+        bar1.classList.remove('translate-y-full');
+        bar1.classList.remove('mt-0.5');
+        bar2.classList.remove('opacity-0');
+        bar3.classList.remove('-rotate-45');
+        bar3.classList.remove('absolute');
+        bar3.classList.remove('-translate-y-0.5');
+      }
+            " class="flex appearance-none p-1 text-gray-500 md:hidden">
+                    <div class="flex w-5 h-5 relative justify-center items-start space-y-1 flex-col">
+                        <span id="bar1" class="w-full h-0.5 transition-all duration-300 rounded-full bg-gray-500"></span>
+                        <span id="bar2" class="w-5/6 h-0.5 transition-all duration-300 rounded-full bg-gray-500"></span>
+                        <span id="bar3" class="w-full h-0.5 transition-all duration-300 rounded-full bg-gray-500"></span>
+                    </div>
+                </button>
+                <a href="/" class="text-gray-900 font-extrabold uppercase text-sm flex items-center">
+                    <span class="">PEN AND PAPER LOVE</span>
+                </a>
+            </div>
+            <nav id="nav" class="md:relative md:w-auto w-full md:mt-0 mt-16 translate-y-2 md:translate-y-0 top-0 md:pb-0 pb-3 bg-white md:bg-transparent absolute items-center md:space-x-2 text-sm font-medium text-gray-500 md:flex hidden">
+                <a href="/track-order" class="md:rounded bg-white md:px-3 px-5 md:py-2 py-3 transition hover:bg-gray-100 md:inline block md:w-auto w-full">Track Order</a>
+                <a href="/love-stories" class="md:rounded bg-white md:px-3 px-5 md:py-2 py-3 transition hover:bg-gray-100 md:inline block md:w-auto w-full">Love Stories</a>
+            </nav>
+            <div class="flex items-center space-x-2 text-sm pr-4 font-medium text-gray-800">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=penandpaperlove.com" class="rounded bg-purple-600 px-3 py-2 text-white transition hover:bg-purple-500">Share on facebook</a>
+            </div>
+        </div>
+    </section>
+    </section>
+    
+    
+    </section>
+    
     <section class="px-2 md:px-0 py-20 bg-gradient-to-r from-pink-300 to-transparent tails-relative">
   <div class="container items-center max-w-6xl px-8 mx-auto xl:px-5">
     <div class="flex flex-wrap items-center sm:-mx-3">
@@ -170,58 +228,9 @@ src="https://www.facebook.com/tr?id=769096397976323&ev=PageView&noscript=1"
       </div>
     </div>
   </div>
-<div class="tails-hover-element">section</div></section><section class="relative bg-white" data-tails-scripts="//unpkg.com/alpinejs">
-    <section class="w-full bg-white gray-900">
-    <section class="w-full bg-white gray-900 tails-relative">
-    <div class="mx-auto flex max-w-7xl items-center h-16 py-1 box-content justify-between">
-        <div class="flex items-center space-x-2 p-4">
-            <button onclick="
- const nav = document.getElementById('nav');
-  const bar1 = document.getElementById('bar1');
-  const bar2 = document.getElementById('bar2');
-  const bar3 = document.getElementById('bar3');
-
-  if (nav.classList.contains('hidden')) {
-    nav.classList.remove('hidden');
-    bar1.classList.add('rotate-45');
-    bar1.classList.add('translate-y-full');
-    bar1.classList.add('mt-0.5');
-    bar2.classList.add('opacity-0');
-    bar3.classList.add('-rotate-45');
-    bar3.classList.add('absolute');
-    bar3.classList.add('-translate-y-0.5');
-  } else {
-    nav.classList.add('hidden');
-    bar1.classList.remove('rotate-45');
-    bar1.classList.remove('translate-y-full');
-    bar1.classList.remove('mt-0.5');
-    bar2.classList.remove('opacity-0');
-    bar3.classList.remove('-rotate-45');
-    bar3.classList.remove('absolute');
-    bar3.classList.remove('-translate-y-0.5');
-  }
-        " class="flex appearance-none p-1 text-gray-500 md:hidden">
-                <div class="flex w-5 h-5 relative justify-center items-start space-y-1 flex-col">
-                    <span id="bar1" class="w-full h-0.5 transition-all duration-300 rounded-full bg-gray-500"></span>
-                    <span id="bar2" class="w-5/6 h-0.5 transition-all duration-300 rounded-full bg-gray-500"></span>
-                    <span id="bar3" class="w-full h-0.5 transition-all duration-300 rounded-full bg-gray-500"></span>
-                </div>
-            </button>
-            <a href="/" class="text-gray-900 font-extrabold uppercase text-sm flex items-center">
-                <span class="">PEN AND PAPER LOVE</span>
-            </a>
-        </div>
-        <nav id="nav" class="md:relative md:w-auto w-full md:mt-0 mt-16 translate-y-2 md:translate-y-0 top-0 md:pb-0 pb-3 bg-white md:bg-transparent absolute items-center md:space-x-2 text-sm font-medium text-gray-500 md:flex hidden">
-            <a href="/track-order" class="md:rounded bg-white md:px-3 px-5 md:py-2 py-3 transition hover:bg-gray-100 md:inline block md:w-auto w-full">Track Order</a>
-            <a href="/love-stories" class="md:rounded bg-white md:px-3 px-5 md:py-2 py-3 transition hover:bg-gray-100 md:inline block md:w-auto w-full">Love Stories</a>
-        </nav>
-        <div class="flex items-center space-x-2 text-sm pr-4 font-medium text-gray-800">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=penandpaperlove.com" class="rounded bg-purple-600 px-3 py-2 text-white transition hover:bg-purple-500">Share on facebook</a>
-        </div>
-    </div>
-<div class="tails-hover-element">section</div></section>
 </section>
-</section><section class="bg-white">
+
+<section class="bg-white">
     <div class="items-center px-8 pt-10 sm:pt-16 mx-auto max-w-7xl lg:px-16 md:px-12 xl:px-36">
 
         <div class="sm:text-center">
@@ -669,42 +678,7 @@ And now save almost 50% off and hours of your time so that you you can spend mor
         }
     </script>
     <button class="col-span-2 fadeOut mx-auto inline-block px-8 py-3 mt-6 text-sm font-semibold text-center text-white transition duration-100 bg-green-600 rounded-md outline-none hover:bg-green-500 active:bg-green-700 ring-green-300 md:text-base lg:shadow" id="checkout-button">Get access to the letter right away </button>
-    <script>
-        function editTxt(selector) {
-            $(function() {
-                var newHtml = '';
-                var sentences = $(selector).html().split(/(\. |\n)/);
-                for (i = 0; i < sentences.length; i++) {
-                    var sentence = sentences[i];
-                    newHtml += '<span class="unreadable">' + sentence + '</span>';
-                }
-                $(selector).html(newHtml);
-                console.log(newHtml);
-            });
-        }
-        $(function() {
-            var hoverCount = 0;
-            var maxHoverCount = 50;
-            editTxt('#hiddenLetterDisplay');
-            $('#hiddenLetterDisplay span').live('mouseover', function() {
-                if (hoverCount < maxHoverCount) {
-                    console.log("made readable");
-                    $(this).removeClass('unreadable');
-                    $(this).addClass('readable');
-                    hoverCount++;
-                    if (hoverCount === maxHoverCount) {
-                        $('#hiddenLetterDisplay span').die('mouseover');
-                        // $('#modal').show();
-                    }
-                }
-            });
-            $('#hiddenLetterDisplay span').live('mouseout', function() {
-                console.log("made unreadable");
-                $(this).removeClass('readable');
-                $(this).addClass('unreadable');
-            });
-        });
-    </script>
+
 </div>
     <div class="flex flex-col sm:col-span-2 pt-8 text-center mx-auto hidden" id="loadingText">
         <h4 class="text-3xl font-bold mx-auto text-center flex-1">
@@ -718,40 +692,7 @@ And now save almost 50% off and hours of your time so that you you can spend mor
     <form class="flex-col flex sm:col-span-2 py-10 hiden text-center" action="https://api.penandpaperlove.com/retrieve/stripe/" method="POST" id="letterboxContainer">
         <label for="letterbox" class="inline-block mb-2 text-3xl font-bold font-medium text-gray-500 capitalize"> Your special and one-of-a-kind love Letter draft. </label>
         <label for="letterbox" class="inline-block mb-2 text-xl font-medium text-gray-500 capitalize"> What you submit will be handwritten exactly the way it is written (space between lines and everything)</label>
-        <script>
-            function countLines(text) {
-                let lines = text.split("\n");
-                let lineCount = 0;
-                for (let line of lines) {
-                    lineCount += Math.ceil(line.length / 70);
-                }
-                lineCount += lines.length - 1;
-                return lineCount;
-            }
 
-            function updateTextArea(event) {
-                const textarea = event.target;
-                if (countLines(textarea.value) > 28) {
-                    textarea.value = lastState;
-                } else {
-                    lastState = textarea.value;
-                }
-                const count = textarea.value.length;
-                const label = document.getElementById("characterCountLabel");
-                var lineCount = countLines(textarea.value);
-                label.innerText = `Letter Count: ${count} / 1200 & Line Count is Good`;
-                if (count >= 1200) {
-                    label.style.color = "red";
-                    label.innerText = `Letter Count: ${count} / 1200 & But Line Count is Good`;
-                }
-                if (lineCount > 28) {
-                    label.style.color = "red";
-                    label.innerText = `Letter Count: ${count} / 1200 & Line Count is Bad`;
-                } else {
-                    label.style.color = "green";
-                }
-            }
-        </script>
         <textarea oninput="updateTextArea(event)" maxlength="1200" name="letterbox" id="letterbox" class="w-full h-[52rem] sm:h-[30rem] px-3 transition duration-100 border rounded-md outline-none bg-gray-50 focus:ring ring-blue-300 text-gray-700 font-serif text-xl text-sky-900"></textarea>
         <label id="characterCountLabel" class="underline text-green-700 float-left inline-block mb-2 font-medium text-xl capitalize mx-auto"> Letter Count: 0 / 1000 Characters &amp; Line Count: 0 / 23</label>
         <h4 class="inline-block mb-2 mt-16 font-bold text-gray-500 capitalize sm:text-2xl lg:text-4xl">Final Step: Choose the Perfect Love Letter Card Cover!</h4>

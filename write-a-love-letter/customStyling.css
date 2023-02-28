@@ -1,0 +1,73 @@
+
+.unreadable {
+  color: transparent;
+  background-color: white;
+  border: none;
+  overflow: hidden;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.readable {
+  color: black;
+  text-shadow: none;
+}
+
+.tails-selected-element label:hover img {
+  border: 2px solid pink;
+}
+
+.tails-selected-element input[type='radio']:checked + img {
+  border: 2px solid darkpurple;
+}
+
+.fadeOut {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
+.fadeOut.hidden {
+  opacity: 0;
+  display: none;
+}
+
+
+  .gradient-text {
+  animation: moving-gradient 3s ease-in-out infinite;
+    background: linear-gradient(90deg, #add8e6, #87cefa, #00bfff);
+  background-size: 400% 400%;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-top: 1em;
+  }
+  
+
+  @keyframes Gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .bouncing-text {
+    animation: Bounce 1s ease-in-out infinite;
+    transform-origin: center bottom;
+  }
+
+  @keyframes Bounce {
+    0% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(-10px);
+    }
+  }

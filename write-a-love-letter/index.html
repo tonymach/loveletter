@@ -16,8 +16,6 @@
 <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
 <script src="https://unpkg.com/@pqina/flip/dist/flip.min.js"></script>
 
-<script src="payments.js"></script>
-<script src="stripePayments.js"></script>
 
 <link href="customStyling.css" rel="stylesheet" type="text/css">
 
@@ -98,7 +96,7 @@ src="https://www.facebook.com/tr?id=769096397976323&ev=PageView&noscript=1"
     </section>
     
 
-<section class="bg-white"> <!-- Pricing --> 
+<section class="bg-white" id="pricingChart"> <!-- Pricing --> 
     <div class="items-center px-8 pt-10 sm:pt-16 mx-auto max-w-7xl lg:px-16 md:px-12 xl:px-36">
 
         <div class="sm:text-center">
@@ -381,7 +379,7 @@ And now save almost 50% off and hours of your time so that you you can spend mor
 
 
     <form class="grid max-w-3xl gap-4 mx-auto sm:grid-cols-3" id="initialForm" action="https://n6wxf1lpc1.execute-api.us-east-2.amazonaws.com/demo" method="POST" enctype="multipart/form-data">
-        <div class="sm:col-span-3 text-center">
+        <div class="col-span-3 text-center">
             <span class="block xl:inline font-bold font-medium capitalize text-5xl">Find the Right Words Fast 💌</span>
         </div>
         <div class="col-span-3">
@@ -418,15 +416,15 @@ And now save almost 50% off and hours of your time so that you you can spend mor
 
 
 <section id="testerDisplay" class="flex items-center justify-between grid-cols-2 grid hidden">
-    <p id="hiddenLetterDisplay" class="col-span-2 w-full h-[60rem] sm:h-[30rem] px-3 transition duration-100 border rounded-md outline-none bg-gray-50 focus:ring ring-blue-300 text-gray-700 font-serif text-xl text-sky-900" style="user-select: none;">
+    <p id="hiddenLetterDisplay" class="col-span-2 w-full px-3 transition duration-100 border rounded-md outline-none bg-gray-50 focus:ring ring-blue-300 text-gray-700 font-serif text-xl text-sky-900" style="user-select: none;">
 
     <!-- Display a payment form -->
-    <section class="upsellOrAI col-span-1 mx-auto" > 
+    <section class="upsellOrAI mx-auto col-span-1 sm:col-span-1 text-center " > 
     
 
         <h1 class="mt-2 text-lg text-[#191b39] lg:text-2xl font-medium tracking-tight font-serif pt-6 pb-6"> Do you enjoy the "thrill" of sending a card?        </h1>
             <ul class="pl-12 pt-6 text-gray-500 text-left ">
-              <li>1. Accessing the message</li>
+              <li>1. Writing the message</li>
               <li>2. Buying a physical card</li>
               <li>3. Practicing your handwriting</li>
               <li>4. Throwing out five different drafts because they're not good enough</li>
@@ -438,10 +436,10 @@ And now save almost 50% off and hours of your time so that you you can spend mor
             If you'd rather skip the "excitement"
             </h1>
           
-        <a href="#_" class="inline-flex items-center justify-center px-6 py-3 mt-8 text-center text-[#191b39] transition duration-200 ease-in-out transform bg-white border-2 border-[#191b39] hover:border-[#191b39] shadow-[4px_4px_#191b39] hover:shadow-none hover:text-[#191b39] focus:outline-none">Send a unique Letter in minutes ♡ </a>
+        <a href="#_" class="inline-flex justify-center px-3 py-3 mt-8 text-center text-[#191b39] transition duration-200 ease-in-out transform bg-white border-2 border-[#191b39] hover:border-[#191b39] shadow-[4px_4px_#191b39] hover:shadow-none hover:text-[#191b39] focus:outline-none">Send a unique Letter in minutes ♡ </a>
 
     </section>
-    <form id="payment-form" class="mx-auto text-center col-span-1 mt-10">
+    <form id="payment-form" class="mx-auto text-center col-span-1 sm:col-span-1 mt-10 ">
 
 
 
@@ -611,5 +609,10 @@ And now save almost 50% off and hours of your time so that you you can spend mor
     </div>
 </section>
 
+
+<script src="payments.js"></script>
+<script src="stripePayments.js"></script>
+
 </body>
 </html>
+

@@ -16,7 +16,6 @@ $(function() {
     editTxt('#hiddenLetterDisplay');
     $('#hiddenLetterDisplay span').live('mouseover', function() {
         if (hoverCount < maxHoverCount) {
-            console.log("made readable");
             $(this).removeClass('unreadable');
             $(this).addClass('readable');
             hoverCount++;
@@ -27,7 +26,6 @@ $(function() {
         }
     });
     $('#hiddenLetterDisplay span').live('mouseout', function() {
-        console.log("made unreadable");
         $(this).removeClass('readable');
         $(this).addClass('unreadable');
     });
@@ -67,17 +65,7 @@ function updateTextArea(event) {
     }
 }
 
-async function updateCount() {
-const count = await getCount();
 
-if(count <= 0){
-    document.getElementById("cardsLeft").innerHTML = `Out of stock! Check back again in 6 hours`;
-    document.getElementById("mailButton").innerText = `Out of stock! Check back again in 6 hours`;
-}
-document.getElementById("cardsLeft").innerHTML = `Only ${count} cards left`;
-document.getElementById("mailButton").innerText = `Sent my one of ${count} remaining stock`;
-
-}
 
 async function getCount() {
 const response = await fetch('https://qbzbb2equb.execute-api.us-east-2.amazonaws.com/default/updateLettersLeft', {
@@ -95,13 +83,6 @@ return tempCount;
 
 
 }
-updateCount();
-// Attach an event listener to the form submit button
-document.getElementById("letterboxContainer").addEventListener("submit", function(event) {
-    if (updateCount()<=0) {
-        event.preventDefault();
-    }
-});
 
 
 const form = document.getElementById("initialForm");
@@ -114,48 +95,6 @@ const writerFirstName = document.getElementById("writerFirstName");
 
 const checkoutForm = document.getElementById("letterboxContainer");
 
-var radios = document.forms["letterboxContainer"].elements["card"];
-for(var i = 0, max = radios.length; i < max; i++) {
-    radios[i].onclick = function() {
-    const formData = new FormData();
-    
-    formData.append('email', email.value);
-    formData.append('lovedOneFirstName', lovedOneFirstName.value);
-    formData.append('letterbox',  document.getElementById('letterbox').value);
-    formData.append('card', this.value);
-
-    const data =  {
-        'email': email.value,
-        'lovedOneFirstName': lovedOneFirstName.value,
-        'letterbox': document.getElementById('letterbox').value,
-        'card': this.value
-    }
-    console.log(data);
-
-    fetch("https://shlo8hrs84.execute-api.us-east-2.amazonaws.com/default/", { method: "POST", headers: {
-      "Content-Type": "application/json"
-    }, body: JSON.stringify(data)}) 
-    .then((response) => response.json())
-    .then((data) => {
-        console.log(data);
-    })
-    ;   
-    }
-}
-
-document.getElementById("email").addEventListener("input", function() {
-  console.log("Visible Input Value: ", this.value);
-document.getElementById("hiddenEmailInput").value = this.value;
-  console.log("Hidden Input Value: ", document.getElementById("hiddenEmailInput").value);
-
-});
-
-document.getElementById("lovedOneFirstName").addEventListener("input", function() {
-  console.log("Visible Input Value: ", this.value);
-document.getElementById("hiddenlovedOneFirstName").value = this.value;
-  console.log("Hidden Input Value: ", document.getElementById("hiddenlovedOneFirstName").value);
-
-});
 
 
 retrieveButton.addEventListener("click", (e) => {
@@ -192,15 +131,16 @@ retrieveButton.addEventListener("click", (e) => {
     });
 });
 
-form.addEventListener("submit", (event) => {
-      fbq('track', 'generatedLoveLetter', {
-    value: 0,
-    currency: 'USD',
-  });
+//What I do not actually want to do is to rewrite it into a redirect but on the otherhand the redirect to the edit page may make the most sense and form into an upsell
+
+
+form.addEventListener("submit", (event) => { //This is for the generation of a letter form
+
     event.preventDefault();
 
 hideForm();
 showLoading();
+
 
 //Generate form data
   const formData = new FormData(form);
@@ -241,34 +181,21 @@ showLoading();
 
 
     function displayLetter(text){
+        document.getElementById("testerDisplay").classList.remove('hidden');
+        str = text.replace(/(?:\r\n|\r|\n)/g, '<br>');
 
-        document.getElementById("letterboxContainer").style.display = "block";
-
-        const textarea = document.getElementById('letterbox');
-        let index = 0;
-
-        const updateText = (text) => {
-
-        setTimeout(() => {
-            textarea.value = text.substring(0, index);
-            index++;
-            if (index <= text.length) {
-            updateText(text);
-            }
-        }, 30);
-
-        }
+        const textarea = document.getElementById('hiddenLetterDisplay');
+        textarea.innerHTML = str;
+        editTxt("#hiddenLetterDisplay");
 
         hideLoading();
-        updateText(text);
-        document.getElementById("letterbox").disabled = false;
 
-//End typewriter
     }
 
  function showLoading(){    
     //Shows loading message
     document.getElementById("loadingText").classList.remove('hidden');
+    document.getElementById("loadingText").scrollIntoView();
     }
 
     function hideLoading(){
@@ -279,8 +206,8 @@ showLoading();
     function hideForm(){
 
     // Hides write the letter button and marketing message
-    document.getElementById("marketingMessage").style.display = "none";
     document.getElementById("initialForm").classList.add('hidden');
+    document.getElementById("pricingChart").classList.add('hidden');
 
     }
 
